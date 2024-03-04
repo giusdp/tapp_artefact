@@ -1,0 +1,17 @@
+service: sleep
+
+provider:
+  name: openwhisk
+  runtime: nodejs:10
+  ignore_certs: true
+
+functions:
+  sleep:
+    handler: sleep.main
+    events:
+      - http:
+          path: /sleep
+          method: post
+          resp: json
+plugins:
+  - serverless-openwhisk

@@ -1,0 +1,17 @@
+service: hellojs
+
+provider:
+  name: openwhisk
+  runtime: nodejs:10
+  ignore_certs: true
+
+functions:
+  hellojs:
+    handler: hello.main
+    events:
+      - http:
+          path: /hellojs
+          method: post
+          resp: json
+plugins:
+  - serverless-openwhisk

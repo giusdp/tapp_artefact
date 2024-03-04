@@ -1,0 +1,11 @@
+{
+  "name": "coldStartAction",
+  "main": "index.js",
+  "dependencies": {
+    "docx": "*",
+    "browserify": "*",
+    "webpack": "*",
+    "superagent": "*",
+    "forever": "*"
+  }
+}

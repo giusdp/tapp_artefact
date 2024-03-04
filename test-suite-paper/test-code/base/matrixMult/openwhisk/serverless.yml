@@ -1,0 +1,17 @@
+service: matrixMult
+
+provider:
+  name: openwhisk
+  runtime: nodejs:10
+  ignore_certs: true
+
+functions:
+  matrixMult:
+    handler: matrixMult.main
+    events:
+      - http:
+          path: /matrixMult
+          method: post
+          resp: json
+plugins:
+  - serverless-openwhisk

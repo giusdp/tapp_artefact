@@ -1,0 +1,17 @@
+service: slackpost
+
+provider:
+  name: openwhisk
+  runtime: nodejs:10
+  ignore_certs: true
+
+functions:
+  slack:
+    handler: handler.slack
+    events:
+      - http:
+          path: /slack
+          method: post
+          resp: json
+plugins:
+  - serverless-openwhisk

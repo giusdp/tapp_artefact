@@ -1,0 +1,17 @@
+service: coldStart
+
+provider:
+  name: openwhisk
+  runtime: nodejs:10
+  ignore_certs: true
+
+functions:
+  coldStart:
+    handler: index.main
+    events:
+      - http:
+          path: /coldStart
+          method: post
+          resp: json
+plugins:
+  - serverless-openwhisk

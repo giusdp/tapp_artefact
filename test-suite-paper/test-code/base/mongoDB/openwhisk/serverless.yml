@@ -1,0 +1,30 @@
+service: mongoDB
+
+provider:
+  name: openwhisk
+  runtime: nodejs:12
+  ignore_certs: true
+
+functions:
+  mongoDB:
+    handler: mongoDB.main
+    annotations:
+      parameters:
+      - tag: 'mongoDB'
+    events:
+      - http:
+          path: /mongoDB
+          method: post
+          resp: json
+  mongoDB_noCTag:
+    handler: mongoDB.main
+    annotations:
+      parameters:
+      - tag: 'mongoDB'
+    events:
+      - http:
+          path: /mongoDB_noCTag
+          method: post
+          resp: json
+plugins:
+  - serverless-openwhisk

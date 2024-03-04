@@ -1,0 +1,7 @@
+{
+  "name": "mongoDBAction",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "4.1.3"
+  }
+}

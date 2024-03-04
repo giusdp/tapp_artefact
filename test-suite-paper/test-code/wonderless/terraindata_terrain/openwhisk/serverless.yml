@@ -1,0 +1,26 @@
+service: sigint-bench
+
+provider:
+  name: openwhisk
+  runtime: nodejs:12
+  ignore_certs: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-openwhisk
+
+functions:
+  runBench:
+    handler: runBench.runBench
+    annotations:
+      parameters:
+        - tag: 'mongoDB'
+    events:
+      - http: GET /terrain
+  runBench_noCTag:
+    handler: runBench.runBench
+    annotations:
+      parameters:
+        - tag: 'mongoDB'
+    events:
+      - http: GET /terrain_noCTag

@@ -1,4 +1,4 @@
-**Special Requirements**: To perform the evaluation of this artefact the user needs to have access to both Google Cloud Platform Compute Engine and Digital Ocean resource.
+**Special Requirements**: To perform the evaluation of this artefact the user needs to have access to both Google Cloud Platform Compute Engine and Digital Ocean resources.
 
 ---
 

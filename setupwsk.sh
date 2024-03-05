@@ -4,13 +4,10 @@
 ARCH=$(uname -m)
 
 # Define the GitHub release URL based on the system architecture
-if [ "$ARCH" == "x86_64" ]; then
-    RELEASE_URL="https://github.com/apache/openwhisk-cli/releases/download/1.2.0/OpenWhisk_CLI-1.2.0-linux-amd64.tgz"
-elif [ "$ARCH" == "aarch64" ]; then
+if [ "$ARCH" == "aarch64" ]; then
     RELEASE_URL="https://github.com/apache/openwhisk-cli/releases/download/1.2.0/OpenWhisk_CLI-1.2.0-linux-arm64.tgz"
 else
-    echo "Unsupported architecture: $ARCH"
-    exit 1
+    RELEASE_URL="https://github.com/apache/openwhisk-cli/releases/download/1.2.0/OpenWhisk_CLI-1.2.0-linux-amd64.tgz"
 fi
 
 # Download the release

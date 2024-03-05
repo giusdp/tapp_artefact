@@ -10,10 +10,10 @@
     src: "{{ inventory_hostname }}.ovpn"
     dest: "/etc/openvpn/client.conf"
 
-- name: remove local certificate files
-  become_user: "{{ lookup('env', 'USER')}}"
-  file: path="./{{ inventory_hostname }}.ovpn" state=absent
-  delegate_to: 127.0.0.1
+# - name: remove local certificate files
+#   become_user: "{{ lookup('env', 'USER')}}"
+#   file: path="./{{ inventory_hostname }}.ovpn" state=absent
+#   delegate_to: 127.0.0.1
 
 # - name: edit address in certificates
 #   shell:

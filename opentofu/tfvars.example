@@ -2,5 +2,5 @@
 # terraform.tfvars file with the following:
 project = "<project id>"
 gc_user = "<gcp_user_name>"
-allowed_ip = "<allowed ip address for invocations>"
+allowed_ip = "0.0.0.0/0"
 do_token = "<digital ocean token>"
